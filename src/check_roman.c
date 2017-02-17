@@ -2,6 +2,7 @@
 
 
 #include<include/roman_to_decimal.h>
+#include<include/decimal_to_roman.h>
 
 
 START_TEST(test_roman_to_decimal)
@@ -46,6 +47,17 @@ ck_assert_int_eq(romtodec("CMCRII"),0);
 
 }
 END_TEST
+START_TEST(test_decimal_to_roman_numbers)
+{
+
+ck_assert_str_eq(dectorom(9),"IX");
+ck_assert_str_eq(dectorom(400),"CD");
+ck_assert_str_eq(dectorom(999),"CMXCIX");
+ck_assert_str_eq(dectorom(10),"X");
+ck_assert_str_eq(dectorom(14),"XIV");
+
+}
+END_TEST
 
 Suite *roman_suite(void){
 
@@ -56,7 +68,9 @@ Suite *roman_suite(void){
 	tcase_add_test(tc_roman,test_roman_to_decimal);
 	tcase_add_test(tc_roman,test_roman_to_decimal_invalid);
 	tcase_add_test(tc_roman,test_roman_to_decimal_numbers);
-	tcase_add_test(tc_roman,test_roman_to_decimal_numbers_invalid);																																	
+	tcase_add_test(tc_roman,test_roman_to_decimal_numbers_invalid);
+	tcase_add_test(tc_roman,test_decimal_to_roman_numbers);
+																																	
 	suite_add_tcase(s,tc_roman);
 	return s;
 }
