@@ -7,8 +7,8 @@ OBJ_DIR = obj
 
 
 
-SRCS =  $(SRC_DIR)/check_roman.c
-OBJS =  $(OBJ_DIR)/check_roman.o
+SRCS =  $(SRC_DIR)/roman_to_decimal.c $(SRC_DIR)/check_roman.c
+OBJS =  $(OBJ_DIR)/roman_to_decimal.o $(OBJ_DIR)/check_roman.o
 
 
 
