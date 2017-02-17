@@ -37,6 +37,14 @@ ck_assert_int_eq(romtodec("XLIV"),44);
 
 }
 END_TEST
+START_TEST(test_roman_to_decimal_numbers_invalid)
+{
+
+ck_assert_int_eq(romtodec("IR"),0);
+
+
+}
+END_TEST
 
 Suite *roman_suite(void){
 
@@ -47,6 +55,7 @@ Suite *roman_suite(void){
 	tcase_add_test(tc_roman,test_roman_to_decimal);
 	tcase_add_test(tc_roman,test_roman_to_decimal_invalid);
 	tcase_add_test(tc_roman,test_roman_to_decimal_numbers);
+	tcase_add_test(tc_roman,test_roman_to_decimal_numbers_invalid);																																	
 	suite_add_tcase(s,tc_roman);
 	return s;
 }

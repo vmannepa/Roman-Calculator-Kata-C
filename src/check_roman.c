@@ -41,6 +41,7 @@ START_TEST(test_roman_to_decimal_numbers_invalid)
 {
 
 ck_assert_int_eq(romtodec("IR"),0);
+ck_assert_int_eq(romtodec("CMCRII"),0);
 
 
 }
