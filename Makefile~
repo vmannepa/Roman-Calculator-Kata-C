@@ -22,4 +22,4 @@ roman_calculator: $(APPS)
 	gcc $(CFLAGS) -o $@ $^
 
 check:
-	gcc $(OBJ_DIR)/roman_to_decimal.o $(OBJ_DIR)/check_roman.o -lcheck -lm -lpthread -lrt -lgcov -coverage -o check_roman
+	gcc $(OBJ_DIR)/roman_to_decimal.o $(OBJ_DIR)/decimal_to_roman.o $(OBJ_DIR)/check_roman.o -lcheck -lm -lpthread -lrt -lgcov -coverage -o check_roman

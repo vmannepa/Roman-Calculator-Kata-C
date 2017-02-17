@@ -2,6 +2,7 @@
 
 
 #include<include/roman_to_decimal.h>
+#include<include/decimal_to_roman.h>
 
 
 START_TEST(test_roman_to_decimal)
@@ -58,6 +59,20 @@ ck_assert_str_eq(dectorom(14),"XIV");
 }
 END_TEST
 
+START_TEST(test_roman_to_decimal_sum_valid)
+{
+
+ck_assert_str_eq(roman_calculator(1,2,'+'),"III");
+ck_assert_str_eq(roman_calculator(1,20,'+'),"XXI");
+ck_assert_str_eq(roman_calculator(1000,2,'+'),"MII");
+ck_assert_str_eq(roman_calculator(900,99,'+'),"CMXCIX");
+ck_assert_str_eq(roman_calculator(20,10,'-'),"X");
+ck_assert_str_eq(roman_calculator(12,3,'-'),"IX");
+ck_assert_str_eq(roman_calculator(1994,1994,'-'),"INVALID");
+
+
+}
+END_TEST
 Suite *roman_suite(void){
 
 	Suite *s;
@@ -69,6 +84,7 @@ Suite *roman_suite(void){
 	tcase_add_test(tc_roman,test_roman_to_decimal_numbers);
 	tcase_add_test(tc_roman,test_roman_to_decimal_numbers_invalid);
 	tcase_add_test(tc_roman,test_decimal_to_roman_numbers);
+	tcase_add_test(tc_roman,test_roman_to_decimal_sum_valid);
 																																	
 	suite_add_tcase(s,tc_roman);
 	return s;
