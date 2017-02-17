@@ -73,7 +73,7 @@ char* dectorom(int num){
         }
         
     }
-	    return rom;
+	sturn rom;
 free(rom);
     
 }

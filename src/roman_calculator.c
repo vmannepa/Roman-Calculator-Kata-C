@@ -9,12 +9,9 @@
 char* roman_calculator(int dec1,int dec2, char symbol){
 	int number;
 	char *result_roman;
-	//result_roman = (char*) malloc(10*sizeof(char));
-	//if(symbol != '+' || symbol !='-'){
-		//return "invalid symbol";}
 	if(symbol == '+'){
 	    number= dec1+dec2;
-	    printf("%d\n",number);
+	    
 	    result_roman = dectorom(number);
 	}
 	else if(symbol == '-'){
@@ -28,7 +25,7 @@ char* roman_calculator(int dec1,int dec2, char symbol){
 	}
 	else{return "invalid symbol";}
 return result_roman;
-//free(result_roman);
+
 }
 
 

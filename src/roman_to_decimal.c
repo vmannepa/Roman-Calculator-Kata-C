@@ -25,7 +25,7 @@ int romtodec_convert(char num){
             return 1000;
         }
         else{
-            return INVALID_NUMERAL;//cout << "invalid roman number\n"<<endl;
+            return INVALID_NUMERAL;
             
         }
        
@@ -38,7 +38,7 @@ int romtodec(char* rom){
 	a=romtodec_convert(rom[i]);
 
          if(a == INVALID_NUMERAL){
-		printf("INVALID NUMERAL \"%c\"\n",rom[i]);
+		//printf("INVALID NUMERAL \"%c\"\n",rom[i]);
 		return INVALID_NUMERAL;
 	}
         if(i==0)
