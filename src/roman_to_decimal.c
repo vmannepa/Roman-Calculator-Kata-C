@@ -31,3 +31,30 @@ int romtodec_convert(char num){
        
 }
 
+int romtodec(char* rom){
+     int a,b;
+     int i=0,sum=0;
+     while(rom[i] !='\0'){
+	a=romtodec_convert(rom[i]);
+
+         if(a == INVALID_NUMERAL){
+		printf("INVALID NUMERAL \"%c\"\n",rom[i]);
+		return INVALID_NUMERAL;
+	}
+        if(i==0)
+            sum=sum+a;
+        else {
+            b= romtodec_convert(rom[i-1]);
+            if(a<=b)
+                sum=sum+a;
+            else if(a>b){
+                sum=sum+a;
+                sum=sum-2*b;
+            }
+            else {;;}
+           
+            }
+             i++;
+        }
+        return sum;
+}
