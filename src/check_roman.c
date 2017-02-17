@@ -7,6 +7,12 @@
 START_TEST(test_roman_to_decimal)
 {
 ck_assert_int_eq(romtodec_convert('I'),1);
+ck_assert_int_eq(romtodec_convert('V'),5);
+ck_assert_int_eq(romtodec_convert('X'),10);
+ck_assert_int_eq(romtodec_convert('L'),50);
+ck_assert_int_eq(romtodec_convert('C'),100);
+ck_assert_int_eq(romtodec_convert('D'),500);
+ck_assert_int_eq(romtodec_convert('M'),1000);
 }
 END_TEST
 
