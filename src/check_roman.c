@@ -16,6 +16,13 @@ ck_assert_int_eq(romtodec_convert('M'),1000);
 }
 END_TEST
 
+START_TEST(test_roman_to_decimal_invalid)
+{
+ck_assert_int_eq(romtodec_convert('Q'),INVALID_NUMERAL);
+ck_assert_int_eq(romtodec_convert('W'),INVALID_NUMERAL);
+ck_assert_int_eq(romtodec_convert('E'),INVALID_NUMERAL);
+}
+END_TEST
 
 
 Suite *roman_suite(void){
@@ -25,6 +32,7 @@ Suite *roman_suite(void){
 	s=suite_create("Roman");
 	tc_roman = tcase_create("Roman_test_case");
 	tcase_add_test(tc_roman,test_roman_to_decimal);
+	tcase_add_test(tc_roman,test_roman_to_decimal_invalid);
 	suite_add_tcase(s,tc_roman);
 	return s;
 }
