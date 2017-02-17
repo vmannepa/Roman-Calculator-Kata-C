@@ -88,6 +88,17 @@ ck_assert_str_eq(roman_calculator(1994,1994,'-'),"INVALID");
 
 }
 END_TEST
+
+START_TEST(test_roman_to_decimal_symbol_invalid)
+{
+
+ck_assert_str_eq(roman_calculator(1,2,'_'),"invalid symbol");
+ck_assert_str_eq(roman_calculator(1,20,'='),"invalid symbol");
+
+
+
+}
+END_TEST
 Suite *roman_suite(void){
 
 	Suite *s;
@@ -101,6 +112,7 @@ Suite *roman_suite(void){
 	tcase_add_test(tc_roman,test_decimal_to_roman_numbers);
 	tcase_add_test(tc_roman,test_roman_to_decimal_addition_valid);
 	tcase_add_test(tc_roman,test_roman_to_decimal_subtraction_valid);
+	tcase_add_test(tc_roman,test_roman_to_decimal_symbol_invalid);
 																																	
 	suite_add_tcase(s,tc_roman);
 	return s;

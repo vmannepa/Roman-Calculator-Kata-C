@@ -26,7 +26,7 @@ char* roman_calculator(int dec1,int dec2, char symbol){
 			return 0;
 	result_roman = dectorom(number);
 	}
-	else{return "invalid symbol";}
+	else{;;}
 return result_roman;
 //free(result_roman);
 }
