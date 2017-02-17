@@ -27,13 +27,21 @@ END_TEST
 START_TEST(test_roman_to_decimal_numbers)
 {
 
-ck_assert_int_eq(romtodec("IX\0"),9);
-ck_assert_int_eq(romtodec("CMCD\0"),1300);
-ck_assert_int_eq(romtodec("IV\0"),4);
-ck_assert_int_eq(romtodec("XL\0"),40);
-ck_assert_int_eq(romtodec("XVII\0"),17);
-ck_assert_int_eq(romtodec("XCIX\0"),99);
-ck_assert_int_eq(romtodec("XLIV\0"),44);
+ck_assert_int_eq(romtodec("IX"),9);
+ck_assert_int_eq(romtodec("CMCD"),1300);
+ck_assert_int_eq(romtodec("IV"),4);
+ck_assert_int_eq(romtodec("XL"),40);
+ck_assert_int_eq(romtodec("XVII"),17);
+ck_assert_int_eq(romtodec("XCIX"),99);
+ck_assert_int_eq(romtodec("XLIV"),44);
+
+}
+END_TEST
+START_TEST(test_roman_to_decimal_numbers_invalid)
+{
+
+ck_assert_int_eq(romtodec("IR"),0);
+
 
 }
 END_TEST
@@ -47,6 +55,7 @@ Suite *roman_suite(void){
 	tcase_add_test(tc_roman,test_roman_to_decimal);
 	tcase_add_test(tc_roman,test_roman_to_decimal_invalid);
 	tcase_add_test(tc_roman,test_roman_to_decimal_numbers);
+	tcase_add_test(tc_roman,test_roman_to_decimal_numbers_invalid);																																	
 	suite_add_tcase(s,tc_roman);
 	return s;
 }
