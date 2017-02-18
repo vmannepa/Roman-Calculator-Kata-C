@@ -44,6 +44,6 @@ int main(void) {
 	printf("Result : %s\n",result_roman);
 	free(roman1);
 	free(roman2);
-	free(result_roman);
+
 	return 0;
 }
